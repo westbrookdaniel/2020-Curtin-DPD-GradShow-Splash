@@ -13,8 +13,8 @@ function init() {
     material.uniforms.uSineDistortCycleCount.value = 2
     material.uniforms.uSineDistortAmplitude.value = 0.1
     material.uniforms.uNoiseDistortVolatility.value = 0
-    
-	const text = new Blotter.Text('Coming Soon', {
+	
+	const text = new Blotter.Text(root.innerText, {
 		weight: 800,
 		size: 50,
 		fill: 'white',
@@ -23,6 +23,8 @@ function init() {
 		paddingBottom: 80,
 		paddingTop: 80,
 	})
+	root.innerText = ''
+
 	var blotter = new Blotter(material, {
 		texts: text,
 	})
