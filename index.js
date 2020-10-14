@@ -7,16 +7,16 @@ const uniforms = {
 }
 
 function init() {
-	const root = document.getElementById('app')
+	const root = document.getElementById('text')
 	material = new Blotter.RollingDistortMaterial()
-    material.uniforms.uSineDistortSpread.value = 0.44
+    material.uniforms.uSineDistortSpread.value = 0.4
     material.uniforms.uSineDistortCycleCount.value = 2
     material.uniforms.uSineDistortAmplitude.value = 0.1
     material.uniforms.uNoiseDistortVolatility.value = 0
     
-	const text = new Blotter.Text('curtin', {
+	const text = new Blotter.Text('Coming Soon', {
 		weight: 800,
-		size: 80,
+		size: 50,
 		fill: 'white',
 		paddingLeft: 80,
 		paddingRight: 80,

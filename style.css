@@ -3,9 +3,14 @@
 }
 body {
     background-color: black;
-    font-size:3em;
     text-align: center;
-    padding: 2rem;
-    font-weight: bold;
+    margin: 0;
     color: white;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
