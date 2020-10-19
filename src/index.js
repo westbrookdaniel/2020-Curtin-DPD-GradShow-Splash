@@ -53,6 +53,7 @@ function render() {
 
 function colorText() {
 	const max = 360
+
 	const colorEl = document.querySelector('.color')
 
 	let hue = 0

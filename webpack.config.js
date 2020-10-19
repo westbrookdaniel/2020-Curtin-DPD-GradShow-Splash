@@ -21,11 +21,26 @@ const config = {
                 test: /\.css$/,
                 use: ["style-loader", "css-loader"],
             },
+            {
+                test: /\.svg$/,
+                use: "file-loader",
+            },
+            {
+                test: /\.png$/,
+                use: [
+                    {
+                        loader: "url-loader",
+                        options: {
+                            mimetype: "image/png",
+                        },
+                    },
+                ],
+            },
         ],
     },
     plugins: [
         new CopyPlugin({
-            patterns: [{ from: "src/lib", to: "lib" }],
+            patterns: [{ from: "public" }],
         }),
         new HtmlWebpackPlugin({
             appMountId: "app",
