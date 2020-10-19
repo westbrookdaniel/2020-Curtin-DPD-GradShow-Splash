@@ -1,15 +1,13 @@
 import './style.css'
 
-let material
-const deep = 0.5
-const fluid = 0.015
-const uniforms = {
-	speed: 0,
-	volatility: 0,
-}
-
-function init() {
-	colorText()
+function animateText() {
+	let material
+	const deep = 0.5
+	const fluid = 0.015
+	const uniforms = {
+		speed: 0,
+		volatility: 0,
+	}
 
 	const root = document.getElementById('text')
 	material = new Blotter.RollingDistortMaterial()
@@ -36,25 +34,24 @@ function init() {
 	root.appendChild(canvas)
 
 	animate()
-}
 
-function animate() {
-	requestAnimationFrame(animate)
-	render()
-}
+	function animate() {
+		requestAnimationFrame(animate)
+		render()
+	}
 
-function render() {
-	uniforms.volatility += (deep * 0.5 - uniforms.volatility) * fluid
-	uniforms.speed += (deep * 0.5 - uniforms.speed) * fluid
+	function render() {
+		uniforms.volatility += (deep * 0.5 - uniforms.volatility) * fluid
+		uniforms.speed += (deep * 0.5 - uniforms.speed) * fluid
+	}
 }
 
 function colorText() {
 	const max = 360
-
 	const colorArr = document.querySelectorAll('.color svg path')
-
 	let hue = 0
 	let inc = true
+
 	const render = () => {
 		colorArr.forEach(colorEl => {
 			colorEl.style.fill = `hsl(${hue}, 63%, 59%)`
@@ -77,8 +74,10 @@ function colorText() {
 		requestAnimationFrame(animate)
 		render()
 	}
-
 	animate()
 }
 
-window.onload = init()
+window.onload = () => {
+	animateText()
+	colorText()
+}
