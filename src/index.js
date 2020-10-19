@@ -1,3 +1,4 @@
+import { animeInit, fadeIn } from './helpers'
 import './style.css'
 
 function animateText() {
@@ -79,6 +80,10 @@ function colorText() {
 }
 
 window.onload = () => {
+	animeInit(['main'])
 	animateText()
 	colorText()
+	setTimeout(() => {
+		fadeIn('main')
+	}, 100);
 }
