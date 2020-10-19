@@ -46,20 +46,19 @@ function animate() {
 function render() {
 	uniforms.volatility += (deep * 0.5 - uniforms.volatility) * fluid
 	uniforms.speed += (deep * 0.5 - uniforms.speed) * fluid
-
-	// material.uniforms.uVolatility.value = uniforms.volatility
-	// material.uniforms.uSpeed.value = uniforms.speed
 }
 
 function colorText() {
 	const max = 360
 
-	const colorEl = document.querySelector('.color')
+	const colorArr = document.querySelectorAll('.color svg path')
 
 	let hue = 0
 	let inc = true
 	const render = () => {
-		colorEl.style.color = `hsl(${hue}, 63%, 59%)`
+		colorArr.forEach(colorEl => {
+			colorEl.style.fill = `hsl(${hue}, 63%, 59%)`
+		})
 
 		if (hue >= 360) {
 			inc = false

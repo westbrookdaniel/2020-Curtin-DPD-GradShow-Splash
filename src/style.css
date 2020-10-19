@@ -8,6 +8,16 @@ body {
     color: #747474;
 }
 
+.logo {
+    width: 150px;
+    max-width: 100%;
+    margin: auto;
+}
+
+.logo svg {
+    max-width: 100%;
+}
+
 main {
     display: flex;
     justify-content: center;
