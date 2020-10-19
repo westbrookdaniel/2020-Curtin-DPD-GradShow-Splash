@@ -8,6 +8,7 @@
   "license": "ISC",
   "scripts": {
     "clean": "rm dist/bundle.js",
+    "pretty": "prettier -w src/**/*.js",
     "build-dev": "webpack --mode development",
     "build-prod": "webpack --mode production"
   },
