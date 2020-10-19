@@ -1,3 +1,5 @@
+import './style.css'
+
 let material
 const deep = 0.5
 const fluid = 0.015
