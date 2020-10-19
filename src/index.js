@@ -18,6 +18,7 @@ function animateText() {
 
 	const text = new Blotter.Text(root.innerText, {
 		weight: 800,
+		family: "Helvetica Neue",
 		size: 50,
 		fill: 'white',
 		paddingLeft: 80,

@@ -26,6 +26,10 @@ const config = {
                 use: "file-loader",
             },
             {
+                test: /\.(woff|woff2|eot|ttf|otf)$/,
+                loader: "url-loader",
+            },
+            {
                 test: /\.png$/,
                 use: [
                     {
