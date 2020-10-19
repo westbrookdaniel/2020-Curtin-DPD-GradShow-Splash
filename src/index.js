@@ -1,6 +1,8 @@
 import { animeInit, fadeIn } from './helpers'
 import './style.css'
 
+document.body.style.opacity = 0
+
 function animateText() {
 	let material
 	const deep = 0.5
@@ -80,10 +82,11 @@ function colorText() {
 }
 
 window.onload = () => {
-	animeInit(['main'])
+	animeInit(['main', '#text'])
 	animateText()
 	colorText()
-	setTimeout(() => {
-		fadeIn('main')
-	}, 100);
+	document.body.style.opacity = 1
+	fadeIn('main').then(() => {
+		fadeIn('#text')
+	})
 }
