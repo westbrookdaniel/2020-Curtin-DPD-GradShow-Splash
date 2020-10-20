@@ -2,8 +2,8 @@ import anime from "animejs";
 
 const trans = "var(--transition)";
 const ease = "easeInOutCubic";
-const dur = 500;
-const sta = 200;
+const dur = 800;
+const sta = 0;
 
 export const animeInit = (selector) => {
     selector.forEach((sel) => {

@@ -83,11 +83,13 @@ function colorText() {
 }
 
 window.onload = () => {
-    animeInit(["main", "#text"]);
+    animeInit([".delay", "#text"]);
     animateText();
     colorText();
     main.style.opacity = 1;
-    fadeIn("main").then(() => {
-        fadeIn("#text");
-    });
+    setTimeout(() => {
+        fadeIn("#text").then(() => {
+            fadeIn(".delay");
+        });            
+    }, 100);
 };
