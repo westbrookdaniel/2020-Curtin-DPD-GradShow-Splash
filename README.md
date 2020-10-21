@@ -1,6 +1,8 @@
-# curtin-grad-splash
+# 2020 Curtin DPD GradShow Splash
 
 Splash page for the curtin graduation showcase 2020.
+
+[Full Website Repository](https://github.com/FrancisVillarba/2020-Curtin-DPD-GradShow)
 
 ## Building and running on localhost
 
