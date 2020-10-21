@@ -61,15 +61,21 @@ a:active {
 }
 
 main {
+    visibility: visible;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
 }
 
+::selection {
+    color: inherit;
+    background: #292929;
+}
+
 #text {
     width: 493px;
-    height: 235px;    
+    height: 235px;
 }
 
 @media only screen and (max-width: 900px) {
