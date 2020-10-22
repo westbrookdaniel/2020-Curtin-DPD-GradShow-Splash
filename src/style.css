@@ -31,7 +31,7 @@ body {
 }
 
 .logo {
-    width: 200px;
+    width: 210px;
     max-width: 100%;
     margin: auto;
 }
@@ -49,6 +49,7 @@ a:active {
 }
 
 .logo svg {
+    height: auto;
     max-width: 100%;
 }
 
@@ -72,11 +73,6 @@ main {
 ::selection {
     color: inherit;
     background: #292929;
-}
-
-#text {
-    width: 493px;
-    height: 235px;
 }
 
 @media only screen and (max-width: 900px) {

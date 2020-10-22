@@ -27,8 +27,8 @@ function animateText() {
         fill: "white",
         paddingLeft: 80,
         paddingRight: 80,
-        paddingBottom: 80,
-        paddingTop: 80,
+        paddingBottom: 70,
+        paddingTop: 100,
     });
     root.innerText = "";
 
