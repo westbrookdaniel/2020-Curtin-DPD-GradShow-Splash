@@ -51,7 +51,6 @@ const config = {
             filename: "index.html",
             template: "./src/index.html",
         }),
-        new CleanWebpackPlugin(),
     ],
     devServer: {
         contentBase: path.join(__dirname, "dist"),

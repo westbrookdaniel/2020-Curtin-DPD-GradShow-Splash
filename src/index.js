@@ -82,14 +82,23 @@ function colorText() {
     animate();
 }
 
+const countdown = () => {
+    const count = document.getElementById("daycount");
+    const dateNow = new Date().getTime();
+    const dateThen = new Date("November 20, 2020 00:00:00").getTime();
+    const daysRemaining = Math.ceil((dateThen - dateNow) / (1000 * 60 * 60 * 24));
+    count.innerText = daysRemaining.toString();
+};
+
 window.onload = () => {
     animeInit([".delay", "#text"]);
     animateText();
     colorText();
+    countdown();
     main.style.opacity = 1;
     setTimeout(() => {
         fadeIn("#text").then(() => {
             fadeIn(".delay");
-        });            
+        });
     }, 100);
 };
