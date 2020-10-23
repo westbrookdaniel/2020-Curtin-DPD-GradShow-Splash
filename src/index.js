@@ -22,7 +22,8 @@ function animateText() {
 
     const text = new Blotter.Text(root.innerText, {
         weight: 800,
-        family: "Helvetica Neue",
+        family:
+            '"Helvetica Neue", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", sans-serif',
         size: 50,
         fill: "white",
         paddingLeft: 80,
@@ -86,7 +87,9 @@ const countdown = () => {
     const count = document.getElementById("daycount");
     const dateNow = new Date().getTime();
     const dateThen = new Date("November 20, 2020 00:00:00").getTime();
-    const daysRemaining = Math.ceil((dateThen - dateNow) / (1000 * 60 * 60 * 24));
+    const daysRemaining = Math.ceil(
+        (dateThen - dateNow) / (1000 * 60 * 60 * 24)
+    );
     count.innerText = daysRemaining.toString();
 };
 
