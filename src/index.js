@@ -5,50 +5,58 @@ const main = document.querySelector("main");
 main.style.opacity = 0;
 
 function animateText() {
-    let material;
-    const deep = 0.5;
-    const fluid = 0.015;
-    const uniforms = {
-        speed: 0,
-        volatility: 0,
-    };
+    try {
+        let material;
+        const deep = 0.5;
+        const fluid = 0.015;
+        const uniforms = {
+            speed: 0,
+            volatility: 0,
+        };
 
-    const root = document.getElementById("text");
-    material = new Blotter.RollingDistortMaterial();
-    material.uniforms.uSineDistortSpread.value = 0.4;
-    material.uniforms.uSineDistortCycleCount.value = 2;
-    material.uniforms.uSineDistortAmplitude.value = 0.1;
-    material.uniforms.uNoiseDistortVolatility.value = 0;
+        const root = document.getElementById("text");
+        material = new Blotter.RollingDistortMaterial();
+        material.uniforms.uSineDistortSpread.value = 0.4;
+        material.uniforms.uSineDistortCycleCount.value = 2;
+        material.uniforms.uSineDistortAmplitude.value = 0.1;
+        material.uniforms.uNoiseDistortVolatility.value = 0;
 
-    const text = new Blotter.Text(root.innerText, {
-        weight: 800,
-        family:
-            '"Helvetica Neue", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", sans-serif',
-        size: 50,
-        fill: "white",
-        paddingLeft: 80,
-        paddingRight: 80,
-        paddingBottom: 70,
-        paddingTop: 100,
-    });
-    root.innerText = "";
+        const text = new Blotter.Text(root.innerText, {
+            weight: 800,
+            family:
+                '"Helvetica Neue", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", sans-serif',
+            size: 50,
+            fill: "white",
+            paddingLeft: 80,
+            paddingRight: 80,
+            paddingBottom: 70,
+            paddingTop: 100,
+        });
+        root.innerText = "";
 
-    var blotter = new Blotter(material, {
-        texts: text,
-    });
-    var canvas = blotter.forText(text).domElement;
-    root.appendChild(canvas);
+        var blotter = new Blotter(material, {
+            texts: text,
+        });
+        var canvas = blotter.forText(text).domElement;
+        root.appendChild(canvas);
 
-    animate();
+        animate();
 
-    function animate() {
-        requestAnimationFrame(animate);
-        render();
-    }
+        function animate() {
+            requestAnimationFrame(animate);
+            render();
+        }
 
-    function render() {
-        uniforms.volatility += (deep * 0.5 - uniforms.volatility) * fluid;
-        uniforms.speed += (deep * 0.5 - uniforms.speed) * fluid;
+        function render() {
+            uniforms.volatility += (deep * 0.5 - uniforms.volatility) * fluid;
+            uniforms.speed += (deep * 0.5 - uniforms.speed) * fluid;
+        }
+    } catch (error) {
+        console.error(error);
+        const text = document.getElementById("text");
+        text.style.display = "none";
+        const hiddenText = document.querySelector(".hidden");
+        hiddenText.style.display = "block";
     }
 }
 
