@@ -22,7 +22,7 @@ function animateText() {
         material.uniforms.uNoiseDistortVolatility.value = 0;
 
         const text = new Blotter.Text(root.innerText, {
-            weight: 800,
+            weight: 700,
             family:
                 '"Helvetica Neue", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", sans-serif',
             size: 50,
