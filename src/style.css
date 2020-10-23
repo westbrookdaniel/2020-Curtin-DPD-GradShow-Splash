@@ -21,14 +21,37 @@
         "Open Sans", sans-serif;
 }
 
+ul {
+    margin: 0;
+    padding: 1em 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+li {
+    color: #333;
+    margin: 0 1em 0.5em;
+    list-style: none;
+}
+li:hover {
+    color: inherit;
+}
+
+.top-section {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3em 0 0;
+}
+
 body {
     background-color: #0f0f0f;
     text-align: center;
     margin: 0;
     color: #747474;
-    height: 100vh;
+    min-height: 100vh;
     width: 100vw;
-    overflow: hidden;
 }
 
 .logo {
@@ -66,9 +89,10 @@ a:active {
 main {
     visibility: visible;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 ::selection {

@@ -102,14 +102,16 @@ const countdown = () => {
 };
 
 window.onload = () => {
-    animeInit([".delay", "#text"]);
+    animeInit([".delay", "#text", "li"]);
     animateText();
     colorText();
     countdown();
     main.style.opacity = 1;
     setTimeout(() => {
         fadeIn("#text").then(() => {
-            fadeIn(".delay");
+            fadeIn(".delay").then(() => {
+                fadeIn("li");
+            });
         });
     }, 100);
 };
